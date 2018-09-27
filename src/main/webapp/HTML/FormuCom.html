@@ -1,0 +1,93 @@
+<!DOCTYPE html>
+<!--
+To change this license header, choose License Headers in Project Properties.
+To change this template file, choose Tools | Templates
+and open the template in the editor.
+-->
+<html>
+    <head>
+        <title>TODO supply a title</title>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+       
+    </head>
+    <body>
+        <div>
+            <form action="../FormularioComplejo" method="post" name="env" id="env">
+                <fieldset>
+                    <legend>Datos personales</legend>
+                <p><label for="nombre">Nombre: </label> <input type="text" name="nombre"/></p>
+                <p><label for="passwd">Password:</label><input type="password" name="pass"/></p>
+                <p><label for="edad">Edad: </label> <select tipe="edad" name="edad"/>  </p>
+                <script type="text/javascript"> 
+                    for(i=0;i<100;i++){
+                        if(i===18){
+                            document.write("<option value='"+i+"' selected='selected'>"+i+"</option>");
+                     
+                        }else{
+                            document.write("<option value='"+i+"'>"+i+"</option>"); 
+                        }
+                            
+                      
+                    }
+                </script>
+            </select>
+                    <!--hay que poner en los values se pasa el nombre para luego no tenga que escribirlo en el servidor-->
+               
+               
+                <!-- <select id="aficiones" name aficiones multiple="multiple" size="6">
+                    <option value="Deporte">Deporte</option>
+                -->
+                </fieldset> 
+                <fieldset>
+                    <legend>Otros datos</legend>
+                     <p><label for="est">Estado Civil:</label>
+                         <input type="radio" name="estadoCi" id="estadoSoltero" value="Soltero/a" >Soltero
+                         <input type="radio" name="estadoCi" value="casado/a">casado
+                         <input type="radio" name="estadoCi" value="viudo/a">viudo
+                         <input type="radio" name="estadoCi" value="divorciado/a">divorciado</p>
+                     <p><label for="aficones">Aficiones (uno o varios, usando CTRL: </label>
+                    <select name="Aficiones" id="Aficiones" size="6" multiple="multiple" form="env">
+                        <option value="Deporte" selected>Deporte</option>
+                        <option value="M&uacute;sica">M&uacute;sica</option> <!-- ojo con los acentos, hay que ponerlos M&usica-->
+                        <option value="Informática">Informática</option>
+                        <option value="Viajes">Viajes</option>
+                        <option value="Tiendas">Tiendas</option>
+                        <option value="Juegos">Juegos</option>
+                    </select>
+                     
+                     
+                     </p>
+                     <p>
+                        <label for="etiquetaComentarios">Comentarios:</label><br>
+                        <textarea name="Comentarios" id="comentarios" rows="5" cols="60"/></textarea>
+                     </p>
+                </fieldset>
+                <fieldset>
+                    <legend>Medios tecnológicos</legend>
+                    <p>
+                        <label for="internet">Internet? </label>
+                         <label>Si</label><input  type="radio"  name="Internet"  id="internet" value="si"  checked>
+                          <label>No</label><input  type="radio"  name="Internet"  id="internet" value="no" >
+                    </p>
+                    <p>
+                        <label for="etiquetaSO:">Sistema Operativo (elige uno): </label><br>
+                        <select name="Sistema Operativo" id="sistema" size="4" form="env">
+                            <option value="Linux" selected>Linux</option>
+                            <option value="Windows">Windows</option>
+                            <option value="Macintosh">Macintosh</option>
+                            <option value="Solaris">Solaris</option>
+                        </select>
+                        
+                    </p>
+                </fieldset>
+                <input type="hidden" name="oculto" value="23">
+                <input type="submit" name="enviar" value="Enviar">
+                <input type="reset" name="cancelar" id="cancelar">
+                
+            </form>
+            
+            
+        </div>
+    </body>
+</html>
