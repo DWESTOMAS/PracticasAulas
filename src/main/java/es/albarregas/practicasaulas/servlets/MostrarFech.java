@@ -34,7 +34,7 @@ public class MostrarFech extends HttpServlet {
     protected void processRequest(HttpServletRequest request, HttpServletResponse response)
             throws ServletException, IOException {
             Map<String,String[]> recogidaDatos=request.getParameterMap();
-            Iterator it=recogidaDatos.entrySet().iterator();
+           // Iterator it=recogidaDatos.entrySet().iterator();
             
         response.setContentType("text/html;charset=UTF-8");
         try (PrintWriter out = response.getWriter()) {
@@ -45,19 +45,33 @@ public class MostrarFech extends HttpServlet {
             out.println("<title>Servlet MostrarFech</title>");            
             out.println("</head>");
             out.println("<body>");
-            out.println("<h1>Servlet MostrarFech at " + request.getContextPath() + "</h1>");
+            out.println("<h1>Servlet para mostrar la fecha en un una sola línea</h1>");
              String mostrarNombre="";
                 String mostrarValor="";
-            while(it.hasNext()){
+            //while(it.hasNext()){
                 
-                Map.Entry<String,String[]> datos=(Map.Entry<String,String[]>) it.next();
-                String nombreCampo=datos.getKey();
-                String[] valores=datos.getValue();
-               
+              //  Map.Entry<String,String[]> datos=(Map.Entry<String,String[]>) it.next();
+               // String nombreCampo=datos.getKey();
+                //String[] valores=datos.getValue();
+                StringBuilder visualiza=new StringBuilder();
+                
+               for(String mostrar:recogidaDatos.keySet()){
+                   String[] prueba = recogidaDatos.get(mostrar);
+                   out.println("<p>"+mostrar+"</p>");
+                   for (int i = 0; i < prueba.length;i++) {
+                       visualiza.append(prueba[i]);
+                       if(!mostrar.equals("ano")){
+                       visualiza.append(" / ");
+                       }
+                   }
+                   
+                   
+               }
+               out.println("<p>"+visualiza+"</p>");
                    
             
             
-            }
+           // }
             out.println("<p>"+mostrarValor+"</p>");
             out.println("</body>");
             out.println("</html>");
