@@ -132,7 +132,7 @@ super();
                 String [] valores=datosRecogidos.get(datos);
                  for(int i=0;i<valores.length;i++){
                      anoEnt=controlEnteros(valores[i]);
-                  // anoEnt=Integer.parseInt(valores[i]);
+                  
                 
                   }
                  if(diaEnt==-1 || mesEnt==-1||anoEnt==-1){
